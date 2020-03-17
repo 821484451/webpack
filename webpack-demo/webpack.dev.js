@@ -1,12 +1,13 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+
+
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = merge(common, {
+module.exports = {
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: './dist',
-		hot: true
+		hot: true,
+		port: 9000
 	},
 	plugins:[new ExtractTextPlugin("styles.css")],
 	module: {
@@ -45,4 +46,4 @@ module.exports = merge(common, {
 			}
 		]
 	}
-});
+};

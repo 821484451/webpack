@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 import './a.less';
-
+console.log(process.argv);
 if (process.env.NODE_ENV !== 'production') {
 	console.log('Looks like we are in development mode!');
 };
