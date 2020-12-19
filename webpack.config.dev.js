@@ -42,18 +42,14 @@ module.exports = {
                 test:  /\.(png|svg|jpg|gif)$/,
                 use: [
                     "file-loader",
-                    'image-webpack-loader', //压缩图片  
+                    'image-webpack-loader' //压缩图片  
                 ]
             },
             {
                 test: /\.js$/,
                 exclude: path.resolve(__dirname, './node_modules/'),
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["@babel/preset-env"]
-                    }
-                }
+                use: "babel-loader",
+                   
             }
         ]
     },
