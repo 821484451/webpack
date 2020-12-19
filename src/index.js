@@ -1,12 +1,12 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-import image from './assets/img/a.jpg';
-import image2 from './assets/img/b.jpg';
-import data from "./assets/json/data.json";
-import './assets/less/style.less';
-import Venus from "./assets/js/venus.js";
-import './assets/less/cube.less';
+import image from '@assets/img/a.jpg';
+import image2 from '@assets/img/b.jpg';
+import data from "@assets/json/data.json";
+import '@assets/less/style.less';
+import Venus from "@assets/js/venus.js";
+import '@assets/less/cube.less';
 let venus = new Venus();
 // venus.http({
 //     url: "http://localhost:3000/user",

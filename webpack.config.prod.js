@@ -11,14 +11,14 @@ module.exports = {
     entry: "./src/index.js",
     mode: "production",
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist')
     },
-    devtool: 'inline-source-map',
     module:{
         rules: [
             {
                 test: /\.css$/,
+                exclude: path.resolve(__dirname, './node_modules/'),
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
@@ -28,6 +28,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
+                exclude: path.resolve(__dirname, './node_modules/'),
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
@@ -41,7 +42,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: path.resolve(__dirname, './node_modules/'),
                 use: {
                     loader: "babel-loader",
                     options: {
@@ -51,6 +52,13 @@ module.exports = {
             }
         ],
         
+    },
+    resolve: {
+        extensions: ['.js', '.json'],
+        alias: {
+            src: path.resolve(__dirname, 'src'),
+            '@assets': path.resolve(__dirname, 'src/assets'),
+        }
     },
     plugins: [
         new CleanWebpackPlugin(),
