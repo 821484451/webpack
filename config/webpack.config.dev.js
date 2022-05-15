@@ -7,7 +7,7 @@ const devConfig = {
     devtool: 'inline-source-map',
     devServer: {
         port: '9000',
-        contentBase: path.resolve(__dirname, "./dist"),
+        contentBase: path.resolve(__dirname, "../dist"),
         hot: true // 启动热更新
     },
     module: {
